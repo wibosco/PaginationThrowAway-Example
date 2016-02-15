@@ -20,8 +20,6 @@
 
 @property (nonatomic, strong) PTEFeed *feed;
 
-@property (nonatomic, strong) NSMutableArray *questions;
-
 @end
 
 @implementation PTEViewController
@@ -45,7 +43,7 @@
 {
     [super viewWillAppear:animated];
     
-    self.questions = nil;
+    self.feed = nil;
     
     [self.tableView reloadData];
 }
@@ -85,7 +83,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.questions.count;
+    return self.feed.orderedQuestions.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

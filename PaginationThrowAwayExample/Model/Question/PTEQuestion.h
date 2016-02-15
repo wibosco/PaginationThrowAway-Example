@@ -10,4 +10,6 @@
 
 @interface PTEQuestion : NSObject
 
+@property (nonatomic, strong) NSDate *createdDate;
+
 @end

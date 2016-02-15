@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class PTEQuestion;
+
 @interface PTEPage : NSObject
+
+@property (nonatomic, strong) NSDate *createdDate;
+
+@property (nonatomic, strong, readonly) NSArray *questions;
+
+@property (nonatomic, strong, readonly) NSArray *orderedQuestions;
+
+- (void)addQuestion:(PTEQuestion *)question;
 
 @end
