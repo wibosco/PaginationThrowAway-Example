@@ -13,8 +13,9 @@
 @interface PTEPage ()
 
 @property (nonatomic, strong, readwrite) NSArray *questions;
-
 @property (nonatomic, strong, readwrite) NSArray *orderedQuestions;
+
+@property (nonatomic, strong) NSURL *nextHref;
 
 @end
 
