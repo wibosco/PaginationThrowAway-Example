@@ -2,7 +2,7 @@
 //  PTEQuestionsAPIManager.m
 //  PaginationThrowAwayExample
 //
-//  Created by Home on 11/02/2016.
+//  Created by Boles on 11/02/2016.
 //  Copyright © 2016 Boles. All rights reserved.
 //
 
@@ -10,6 +10,7 @@
 
 #import "PTEQueueManager.h"
 #import "PTEFeed.h"
+#import "PTEQuestionsRetrievalOperation.h"
 
 @implementation PTEQuestionsAPIManager
 
@@ -32,7 +33,14 @@
     NSURLSessionDataTask *task = [session dataTaskWithURL:url
                                         completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
                                   {
-                                      //Do we need to move execution onto the main thread?
+                                      dispatch_async(dispatch_get_main_queue(), ^
+                                                     {
+                                                         PTEQuestionsRetrievalOperation *operation = [[PTEQuestionsRetrievalOperation alloc] initWithFeed:feed
+                                                                                                                                                     data:data
+                                                                                                                                               completion:completion];
+                                                         
+                                                         [[PTEQueueManager sharedInstance].queue addOperation:operation];
+                                                     });
                                   }];
     
     [task resume];

@@ -10,4 +10,8 @@
 
 @interface PTEQueueManager : NSObject
 
++ (instancetype)sharedInstance;
+
+@property (nonatomic, strong, readonly) NSOperationQueue *queue;
+
 @end

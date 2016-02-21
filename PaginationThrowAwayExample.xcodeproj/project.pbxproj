@@ -10,14 +10,14 @@
 		0190D07C08664DD3AA7F5656 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D413875A466012108F0463 /* libPods.a */; };
 		4393CFF71C72334700AB67C2 /* PTEQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4393CFF61C72334700AB67C2 /* PTEQueueManager.m */; };
 		4393D0011C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4393CFFE1C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m */; };
-		4393D0041C7236F800AB67C2 /* PTEQuestionParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4393D0031C7236F800AB67C2 /* PTEQuestionParse.m */; };
+		4393D0041C7236F800AB67C2 /* PTEQuestionParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4393D0031C7236F800AB67C2 /* PTEQuestionParser.m */; };
 		F40487E41C6D3B7A00DAEF2D /* PaginationThrowAwayExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F40487E31C6D3B7A00DAEF2D /* PaginationThrowAwayExampleTests.m */; };
 		F40488001C6D3C1700DAEF2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F40487F01C6D3C1700DAEF2D /* AppDelegate.m */; };
 		F40488011C6D3C1700DAEF2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40487F31C6D3C1700DAEF2D /* Assets.xcassets */; };
 		F40488021C6D3C1700DAEF2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F40487F51C6D3C1700DAEF2D /* LaunchScreen.storyboard */; };
 		F40488041C6D3C1700DAEF2D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F40487FA1C6D3C1700DAEF2D /* Info.plist */; };
 		F40488051C6D3C1700DAEF2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F40487FB1C6D3C1700DAEF2D /* main.m */; };
-		F40488061C6D3C1700DAEF2D /* PTEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40487FF1C6D3C1700DAEF2D /* PTEViewController.m */; };
+		F40488061C6D3C1700DAEF2D /* PTEQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40487FF1C6D3C1700DAEF2D /* PTEQuestionViewController.m */; };
 		F404880E1C6D421300DAEF2D /* PTEQuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F404880D1C6D421300DAEF2D /* PTEQuestionTableViewCell.m */; };
 		F40488131C6D431800DAEF2D /* PTEQuestionsAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F40488121C6D431800DAEF2D /* PTEQuestionsAPIManager.m */; };
 		F404881A1C6D44B500DAEF2D /* PTEFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = F40488191C6D44B500DAEF2D /* PTEFeed.m */; };
@@ -42,8 +42,8 @@
 		4393CFF61C72334700AB67C2 /* PTEQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQueueManager.m; sourceTree = "<group>"; };
 		4393CFFD1C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestionsRetrievalOperation.h; sourceTree = "<group>"; };
 		4393CFFE1C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQuestionsRetrievalOperation.m; sourceTree = "<group>"; };
-		4393D0021C7236F800AB67C2 /* PTEQuestionParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestionParse.h; sourceTree = "<group>"; };
-		4393D0031C7236F800AB67C2 /* PTEQuestionParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQuestionParse.m; sourceTree = "<group>"; };
+		4393D0021C7236F800AB67C2 /* PTEQuestionParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestionParser.h; sourceTree = "<group>"; };
+		4393D0031C7236F800AB67C2 /* PTEQuestionParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQuestionParser.m; sourceTree = "<group>"; };
 		77121B225FE12256D2CB9AD4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F40487C61C6D3B7A00DAEF2D /* PaginationThrowAwayExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaginationThrowAwayExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40487DF1C6D3B7A00DAEF2D /* PaginationThrowAwayExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaginationThrowAwayExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,8 +55,8 @@
 		F40487F61C6D3C1700DAEF2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F40487FA1C6D3C1700DAEF2D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F40487FB1C6D3C1700DAEF2D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F40487FE1C6D3C1700DAEF2D /* PTEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEViewController.h; sourceTree = "<group>"; };
-		F40487FF1C6D3C1700DAEF2D /* PTEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEViewController.m; sourceTree = "<group>"; };
+		F40487FE1C6D3C1700DAEF2D /* PTEQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestionViewController.h; sourceTree = "<group>"; };
+		F40487FF1C6D3C1700DAEF2D /* PTEQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQuestionViewController.m; sourceTree = "<group>"; };
 		F404880C1C6D421300DAEF2D /* PTEQuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestionTableViewCell.h; sourceTree = "<group>"; };
 		F404880D1C6D421300DAEF2D /* PTEQuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQuestionTableViewCell.m; sourceTree = "<group>"; };
 		F40488111C6D431800DAEF2D /* PTEQuestionsAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestionsAPIManager.h; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		4393D0001C7234C500AB67C2 /* Question */ = {
 			isa = PBXGroup;
 			children = (
-				4393D0021C7236F800AB67C2 /* PTEQuestionParse.h */,
-				4393D0031C7236F800AB67C2 /* PTEQuestionParse.m */,
+				4393D0021C7236F800AB67C2 /* PTEQuestionParser.h */,
+				4393D0031C7236F800AB67C2 /* PTEQuestionParser.m */,
 			);
 			path = Question;
 			sourceTree = "<group>";
@@ -254,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				F40488071C6D3F5D00DAEF2D /* Cells */,
-				F40487FE1C6D3C1700DAEF2D /* PTEViewController.h */,
-				F40487FF1C6D3C1700DAEF2D /* PTEViewController.m */,
+				F40487FE1C6D3C1700DAEF2D /* PTEQuestionViewController.h */,
+				F40487FF1C6D3C1700DAEF2D /* PTEQuestionViewController.m */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -486,14 +486,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4393CFF71C72334700AB67C2 /* PTEQueueManager.m in Sources */,
-				F40488061C6D3C1700DAEF2D /* PTEViewController.m in Sources */,
+				F40488061C6D3C1700DAEF2D /* PTEQuestionViewController.m in Sources */,
 				4393D0011C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m in Sources */,
 				F40488201C6D44CC00DAEF2D /* PTEQuestion.m in Sources */,
 				F404881A1C6D44B500DAEF2D /* PTEFeed.m in Sources */,
 				F40488131C6D431800DAEF2D /* PTEQuestionsAPIManager.m in Sources */,
 				F404880E1C6D421300DAEF2D /* PTEQuestionTableViewCell.m in Sources */,
 				F404881D1C6D44BF00DAEF2D /* PTEPage.m in Sources */,
-				4393D0041C7236F800AB67C2 /* PTEQuestionParse.m in Sources */,
+				4393D0041C7236F800AB67C2 /* PTEQuestionParser.m in Sources */,
 				F40488051C6D3C1700DAEF2D /* main.m in Sources */,
 				F40488001C6D3C1700DAEF2D /* AppDelegate.m in Sources */,
 			);

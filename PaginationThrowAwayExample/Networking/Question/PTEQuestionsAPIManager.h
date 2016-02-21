@@ -2,7 +2,7 @@
 //  PTEQuestionsAPIManager.h
 //  PaginationThrowAwayExample
 //
-//  Created by Home on 11/02/2016.
+//  Created by Boles on 11/02/2016.
 //  Copyright © 2016 Boles. All rights reserved.
 //
 

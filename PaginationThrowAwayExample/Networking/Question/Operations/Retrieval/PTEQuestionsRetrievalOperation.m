@@ -9,11 +9,15 @@
 #import "PTEQuestionsRetrievalOperation.h"
 
 #import "PTEFeed.h"
+#import "PTEQuestionParser.h"
 
 @interface PTEQuestionsRetrievalOperation ()
 
 @property (nonatomic, strong) PTEFeed *feed;
-@property (nonatomic, strong) NSDictionary *response;
+@property (nonatomic, strong) NSData *data;
+@property (nonatomic, copy) void (^completion)(BOOL successful);
+
+@property (nonatomic, strong) NSOperationQueue *callBackQueue;
 
 @end
 
@@ -22,17 +26,61 @@
 #pragma mark - Init
 
 - (instancetype)initWithFeed:(PTEFeed *)feed
-                    response:(NSDictionary *)response
+                        data:(NSData *)data
+                  completion:(void(^)(BOOL successful))completion
 {
     self = [super init];
     
     if (self)
     {
         self.feed = feed;
-        self.response = response;
+        self.data = data;
+        self.completion = completion;
+        self.callBackQueue = [NSOperationQueue currentQueue];
     }
     
     return self;
+}
+
+#pragma mark - Main
+
+- (void)main
+{
+    [super main];
+    
+    NSError *serializationError = nil;
+    
+    NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:self.data
+                                                                 options:NSJSONReadingMutableContainers
+                                                                   error:&serializationError];
+    
+    if (serializationError)
+    {
+        [self.callBackQueue addOperationWithBlock:^
+         {
+             if (self.completion)
+             {
+                 self.completion(NO);
+             }
+         }];
+    }
+    else
+    {
+        PTEQuestionParser *parser = [[PTEQuestionParser alloc] init];
+        PTEPage *page = [parser parseQuestions:jsonResponse];
+        
+        [self.feed addPage:page];
+        
+        /*----------------*/
+        
+        [self.callBackQueue addOperationWithBlock:^
+        {
+            if (self.completion)
+            {
+                self.completion(YES);
+            }
+        }];
+    }
 }
 
 @end

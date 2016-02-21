@@ -2,11 +2,11 @@
 //  PTEViewController.m
 //  PaginationThrowAwayExample
 //
-//  Created by Home on 11/02/2016.
+//  Created by Boles on 11/02/2016.
 //  Copyright © 2016 Boles. All rights reserved.
 //
 
-#import "PTEViewController.h"
+#import "PTEQuestionViewController.h"
 
 #import "PTEQuestionTableViewCell.h"
 #import "PTEQuestionsAPIManager.h"
@@ -15,7 +15,7 @@
 #import "PTEQuestion.h"
 #import "PTEQuestionsAPIManager.h"
 
-@interface PTEViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface PTEQuestionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation PTEViewController
+@implementation PTEQuestionViewController
 
 #pragma mark - ViewLifecycle
 

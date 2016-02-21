@@ -13,6 +13,7 @@
 @interface PTEQuestionsRetrievalOperation : NSOperation
 
 - (instancetype)initWithFeed:(PTEFeed *)feed
-                    response:(NSDictionary *)response;
+                        data:(NSData *)data
+                  completion:(void(^)(BOOL successful))completion;
 
 @end
