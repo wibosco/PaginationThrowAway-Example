@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4393CFF71C72334700AB67C2 /* PTEQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4393CFF61C72334700AB67C2 /* PTEQueueManager.m */; };
+		4393D0011C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4393CFFE1C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m */; };
+		4393D0041C7236F800AB67C2 /* PTEQuestionParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4393D0031C7236F800AB67C2 /* PTEQuestionParse.m */; };
 		F40487E41C6D3B7A00DAEF2D /* PaginationThrowAwayExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F40487E31C6D3B7A00DAEF2D /* PaginationThrowAwayExampleTests.m */; };
 		F40488001C6D3C1700DAEF2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F40487F01C6D3C1700DAEF2D /* AppDelegate.m */; };
 		F40488011C6D3C1700DAEF2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F40487F31C6D3C1700DAEF2D /* Assets.xcassets */; };
@@ -32,6 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4393CFF51C72334700AB67C2 /* PTEQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQueueManager.h; sourceTree = "<group>"; };
+		4393CFF61C72334700AB67C2 /* PTEQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQueueManager.m; sourceTree = "<group>"; };
+		4393CFFD1C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestionsRetrievalOperation.h; sourceTree = "<group>"; };
+		4393CFFE1C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQuestionsRetrievalOperation.m; sourceTree = "<group>"; };
+		4393D0021C7236F800AB67C2 /* PTEQuestionParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestionParse.h; sourceTree = "<group>"; };
+		4393D0031C7236F800AB67C2 /* PTEQuestionParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQuestionParse.m; sourceTree = "<group>"; };
 		F40487C61C6D3B7A00DAEF2D /* PaginationThrowAwayExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaginationThrowAwayExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40487DF1C6D3B7A00DAEF2D /* PaginationThrowAwayExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaginationThrowAwayExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F40487E31C6D3B7A00DAEF2D /* PaginationThrowAwayExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaginationThrowAwayExampleTests.m; sourceTree = "<group>"; };
@@ -74,6 +83,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4393CFF31C72332F00AB67C2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4393CFF41C72332F00AB67C2 /* QueueManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		4393CFF41C72332F00AB67C2 /* QueueManager */ = {
+			isa = PBXGroup;
+			children = (
+				4393CFF51C72334700AB67C2 /* PTEQueueManager.h */,
+				4393CFF61C72334700AB67C2 /* PTEQueueManager.m */,
+			);
+			path = QueueManager;
+			sourceTree = "<group>";
+		};
+		4393CFFB1C7234C500AB67C2 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				4393CFFC1C7234C500AB67C2 /* Retrieval */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		4393CFFC1C7234C500AB67C2 /* Retrieval */ = {
+			isa = PBXGroup;
+			children = (
+				4393CFFD1C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.h */,
+				4393CFFE1C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m */,
+			);
+			path = Retrieval;
+			sourceTree = "<group>";
+		};
+		4393CFFF1C7234C500AB67C2 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				4393D0001C7234C500AB67C2 /* Question */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		4393D0001C7234C500AB67C2 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				4393D0021C7236F800AB67C2 /* PTEQuestionParse.h */,
+				4393D0031C7236F800AB67C2 /* PTEQuestionParse.m */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
 		F40487BD1C6D3B7A00DAEF2D = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				F40487EE1C6D3C1700DAEF2D /* AppDelegate */,
+				4393CFF31C72332F00AB67C2 /* Managers */,
 				F40488141C6D44A400DAEF2D /* Model */,
 				F404880F1C6D424100DAEF2D /* Networking */,
 				F40487F11C6D3C1700DAEF2D /* Resources */,
@@ -203,6 +264,8 @@
 		F40488101C6D424100DAEF2D /* Question */ = {
 			isa = PBXGroup;
 			children = (
+				4393CFFB1C7234C500AB67C2 /* Operations */,
+				4393CFFF1C7234C500AB67C2 /* Parser */,
 				F40488111C6D431800DAEF2D /* PTEQuestionsAPIManager.h */,
 				F40488121C6D431800DAEF2D /* PTEQuestionsAPIManager.m */,
 			);
@@ -347,12 +410,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4393CFF71C72334700AB67C2 /* PTEQueueManager.m in Sources */,
 				F40488061C6D3C1700DAEF2D /* PTEViewController.m in Sources */,
+				4393D0011C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m in Sources */,
 				F40488201C6D44CC00DAEF2D /* PTEQuestion.m in Sources */,
 				F404881A1C6D44B500DAEF2D /* PTEFeed.m in Sources */,
 				F40488131C6D431800DAEF2D /* PTEQuestionsAPIManager.m in Sources */,
 				F404880E1C6D421300DAEF2D /* PTEQuestionTableViewCell.m in Sources */,
 				F404881D1C6D44BF00DAEF2D /* PTEPage.m in Sources */,
+				4393D0041C7236F800AB67C2 /* PTEQuestionParse.m in Sources */,
 				F40488051C6D3C1700DAEF2D /* main.m in Sources */,
 				F40488001C6D3C1700DAEF2D /* AppDelegate.m in Sources */,
 			);

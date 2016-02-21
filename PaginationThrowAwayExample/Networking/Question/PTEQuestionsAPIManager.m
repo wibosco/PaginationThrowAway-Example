@@ -8,6 +8,34 @@
 
 #import "PTEQuestionsAPIManager.h"
 
+#import "PTEQueueManager.h"
+#import "PTEFeed.h"
+
 @implementation PTEQuestionsAPIManager
+
+#pragma mark - Retrieval
+
++ (void)retrievalQuestionsForFeed:(PTEFeed *)feed
+                       completion:(void(^)(BOOL successful))completion
+{
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSMutableString *mutableURLString = [[NSMutableString alloc] initWithString:@"https://api.stackexchange.com/2.2/questions?site=stackoverflow"];
+    
+    if (feed.pages.count > 0)
+    {
+        [mutableURLString appendFormat:@"&page=%@", @(feed.pages.count)];
+    }
+    
+    NSURL *url = [NSURL URLWithString:[mutableURLString copy]];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url
+                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+                                  {
+                                      //Do we need to move execution onto the main thread?
+                                  }];
+    
+    [task resume];
+}
 
 @end

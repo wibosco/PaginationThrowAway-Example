@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class PTEFeed;
+
 @interface PTEQuestionsAPIManager : NSObject
+
++ (void)retrievalQuestionsForFeed:(PTEFeed *)feed
+                       completion:(void(^)(BOOL successful))completion;
 
 @end

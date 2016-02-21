@@ -13,12 +13,16 @@
 #import "PTEFeed.h"
 #import "PTEPage.h"
 #import "PTEQuestion.h"
+#import "PTEQuestionsAPIManager.h"
 
 @interface PTEViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) PTEFeed *feed;
+
+- (void)refresh;
+- (void)paginate;
 
 @end
 
@@ -43,9 +47,23 @@
 {
     [super viewWillAppear:animated];
     
-    self.feed = nil;
+    [self refresh];
     
     [self.tableView reloadData];
+}
+
+#pragma mark - DataRetrieval
+
+- (void)refresh
+{
+    self.feed = nil;
+    
+    [PTEQuestionsAPIManager ]
+}
+
+- (void)paginate
+{
+    
 }
 
 #pragma mark - Questions
