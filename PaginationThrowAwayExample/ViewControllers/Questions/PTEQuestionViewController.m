@@ -14,12 +14,17 @@
 #import "PTEPage.h"
 #import "PTEQuestion.h"
 #import "PTEQuestionsAPIManager.h"
+#import "PTETableViewPaginatingView.h"
 
 @interface PTEQuestionViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) PTEFeed *feed;
+
+@property (nonatomic, strong) PTETableViewPaginatingView *paginatingView;
+
+@property (nonatomic, assign, getter = isPaginating) BOOL paginating;
 
 - (void)refresh;
 - (void)paginate;
@@ -69,12 +74,30 @@
 
 - (void)paginate
 {
+    if (!self.isPaginating)
+    {
+        self.paginating = YES;
+        
+        self.tableView.tableFooterView = self.paginatingView;
+        
+        [self.paginatingView.activityIndicatorView startAnimating];
+    }
+    
     __weak typeof(self) weakSelf = self;
     
     [PTEQuestionsAPIManager retrievalQuestionsForFeed:self.feed
                                            completion:^(BOOL successful)
      {
          [weakSelf.tableView reloadData];
+         
+         if (self.isPaginating)
+         {
+             self.paginating = NO;
+             
+             self.tableView.tableFooterView = nil;
+             
+             [self.paginatingView.activityIndicatorView stopAnimating];
+         }
      }];
 }
 
@@ -99,6 +122,8 @@
         _tableView = [[UITableView alloc] initWithFrame:self.view.frame
                                                   style:UITableViewStylePlain];
         
+        _tableView.rowHeight = 66.0f;
+        
         _tableView.dataSource = self;
         _tableView.delegate = self;
         
@@ -107,6 +132,19 @@
     }
     
     return _tableView;
+}
+
+- (PTETableViewPaginatingView *)paginatingView
+{
+    if (!_paginatingView)
+    {
+        _paginatingView = [[PTETableViewPaginatingView alloc] initWithFrame:CGRectMake(0.0f,
+                                                                                       0.0f,
+                                                                                       self.tableView.frame.size.width,
+                                                                                       60.0f)];
+    }
+    
+    return _paginatingView;
 }
 
 #pragma mark - UITableViewDataSource
@@ -125,6 +163,18 @@
     
     cell.questionLabel.text = question.title;
     cell.authorLabel.text = question.author;
+    
+    /*-------------------*/
+    
+    NSUInteger numberOfRowsInSection = [tableView numberOfRowsInSection:indexPath.section];
+    NSUInteger paginationTriggerIndex = numberOfRowsInSection - 10;
+    
+    BOOL triggerPagination = (indexPath.row >= MIN(paginationTriggerIndex, numberOfRowsInSection - 1));
+    
+    if (triggerPagination)
+    {
+        [self paginate];
+    }
     
     /*-------------------*/
     

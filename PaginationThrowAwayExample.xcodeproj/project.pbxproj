@@ -23,6 +23,7 @@
 		F404881A1C6D44B500DAEF2D /* PTEFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = F40488191C6D44B500DAEF2D /* PTEFeed.m */; };
 		F404881D1C6D44BF00DAEF2D /* PTEPage.m in Sources */ = {isa = PBXBuildFile; fileRef = F404881C1C6D44BF00DAEF2D /* PTEPage.m */; };
 		F40488201C6D44CC00DAEF2D /* PTEQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = F404881F1C6D44CC00DAEF2D /* PTEQuestion.m */; };
+		F47510561C7A3C4500C6E3D1 /* PTETableViewPaginatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47510551C7A3C4500C6E3D1 /* PTETableViewPaginatingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		F404881C1C6D44BF00DAEF2D /* PTEPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEPage.m; sourceTree = "<group>"; };
 		F404881E1C6D44CC00DAEF2D /* PTEQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTEQuestion.h; sourceTree = "<group>"; };
 		F404881F1C6D44CC00DAEF2D /* PTEQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTEQuestion.m; sourceTree = "<group>"; };
+		F47510541C7A3C4500C6E3D1 /* PTETableViewPaginatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTETableViewPaginatingView.h; sourceTree = "<group>"; };
+		F47510551C7A3C4500C6E3D1 /* PTETableViewPaginatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTETableViewPaginatingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,7 @@
 				F40488071C6D3F5D00DAEF2D /* Cells */,
 				F40487FE1C6D3C1700DAEF2D /* PTEQuestionViewController.h */,
 				F40487FF1C6D3C1700DAEF2D /* PTEQuestionViewController.m */,
+				F47510521C7A3C2E00C6E3D1 /* Views */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -331,6 +335,23 @@
 				F404881F1C6D44CC00DAEF2D /* PTEQuestion.m */,
 			);
 			path = Question;
+			sourceTree = "<group>";
+		};
+		F47510521C7A3C2E00C6E3D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F47510531C7A3C2E00C6E3D1 /* Paginating */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F47510531C7A3C2E00C6E3D1 /* Paginating */ = {
+			isa = PBXGroup;
+			children = (
+				F47510541C7A3C4500C6E3D1 /* PTETableViewPaginatingView.h */,
+				F47510551C7A3C4500C6E3D1 /* PTETableViewPaginatingView.m */,
+			);
+			path = Paginating;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47510561C7A3C4500C6E3D1 /* PTETableViewPaginatingView.m in Sources */,
 				4393CFF71C72334700AB67C2 /* PTEQueueManager.m in Sources */,
 				F40488061C6D3C1700DAEF2D /* PTEQuestionViewController.m in Sources */,
 				4393D0011C7234C500AB67C2 /* PTEQuestionsRetrievalOperation.m in Sources */,

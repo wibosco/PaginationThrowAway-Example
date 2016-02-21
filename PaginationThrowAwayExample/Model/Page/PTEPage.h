@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong, readonly) NSArray *orderedQuestions;
 
+@property (nonatomic, strong) NSString *nextHref;
+
 - (void)addQuestion:(PTEQuestion *)question;
 
 @end

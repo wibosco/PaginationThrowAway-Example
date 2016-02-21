@@ -9,6 +9,7 @@
 #import "PTEQuestionsRetrievalOperation.h"
 
 #import "PTEFeed.h"
+#import "PTEPage.h"
 #import "PTEQuestionParser.h"
 
 @interface PTEQuestionsRetrievalOperation ()
@@ -68,6 +69,8 @@
     {
         PTEQuestionParser *parser = [[PTEQuestionParser alloc] init];
         PTEPage *page = [parser parseQuestions:jsonResponse];
+        
+        page.nextHref = [NSString stringWithFormat:@"%@&page=%@", kPTEBaseURLString, @(self.feed.pages.count + 1)];
         
         [self.feed addPage:page];
         

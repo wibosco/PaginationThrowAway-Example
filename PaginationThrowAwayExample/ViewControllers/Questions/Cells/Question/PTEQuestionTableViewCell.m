@@ -44,6 +44,8 @@
     if (!_questionLabel)
     {
         _questionLabel = [UILabel newAutoLayoutView];
+        _questionLabel.numberOfLines = 2;
+        _questionLabel.font = [UIFont boldSystemFontOfSize:15.0f];
     }
     
     return _questionLabel;
@@ -54,6 +56,7 @@
     if (!_authorLabel)
     {
         _authorLabel = [UILabel newAutoLayoutView];
+        _authorLabel.font = [UIFont systemFontOfSize:14.0f];
     }
     
     return _authorLabel;
@@ -71,12 +74,12 @@
     [self.questionLabel autoPinEdge:ALEdgeTop
                              toEdge:ALEdgeTop
                              ofView:self.contentView
-                         withOffset:2.0f];
+                         withOffset:8.0f];
     
     [self.questionLabel autoPinEdge:ALEdgeRight
                              toEdge:ALEdgeRight
                              ofView:self.contentView
-                         withOffset:10.0f];
+                         withOffset:-10.0f];
     
     /*---------------------*/
     
@@ -85,15 +88,15 @@
                            ofView:self.contentView
                        withOffset:10.0f];
     
-    [self.authorLabel autoPinEdge:ALEdgeTop
+    [self.authorLabel autoPinEdge:ALEdgeBottom
                            toEdge:ALEdgeBottom
-                           ofView:self.questionLabel
-                       withOffset:2.0f];
+                           ofView:self.contentView
+                       withOffset:-5.0f];
     
     [self.authorLabel autoPinEdge:ALEdgeRight
                            toEdge:ALEdgeRight
                            ofView:self.contentView
-                       withOffset:10.0f];
+                       withOffset:-10.0f];
     
     /*---------------------*/
     

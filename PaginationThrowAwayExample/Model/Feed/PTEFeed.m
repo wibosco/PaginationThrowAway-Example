@@ -10,6 +10,8 @@
 
 #import "PTEPage.h"
 
+NSString * kPTEBaseURLString = @"https://api.stackexchange.com/2.2/questions?site=stackoverflow";
+
 @interface PTEFeed ()
 
 @property (nonatomic, strong, readwrite) NSArray *pages;

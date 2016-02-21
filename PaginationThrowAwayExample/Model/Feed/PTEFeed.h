@@ -10,6 +10,8 @@
 
 @class PTEPage;
 
+extern NSString * kPTEBaseURLString;
+
 @interface PTEFeed : NSObject
 
 @property (nonatomic, strong, readonly) NSArray *pages;

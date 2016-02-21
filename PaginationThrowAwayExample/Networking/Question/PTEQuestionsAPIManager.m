@@ -11,6 +11,7 @@
 #import "PTEQueueManager.h"
 #import "PTEFeed.h"
 #import "PTEQuestionsRetrievalOperation.h"
+#import "PTEPage.h"
 
 @implementation PTEQuestionsAPIManager
 
@@ -21,14 +22,18 @@
 {
     NSURLSession *session = [NSURLSession sharedSession];
     
-    NSMutableString *mutableURLString = [[NSMutableString alloc] initWithString:@"https://api.stackexchange.com/2.2/questions?site=stackoverflow"];
+    NSURL *url = nil;
     
     if (feed.pages.count > 0)
     {
-        [mutableURLString appendFormat:@"&page=%@", @(feed.pages.count)];
+        PTEPage *page = [feed.orderedPages lastObject];
+        url = [NSURL URLWithString:page.nextHref];
     }
-    
-    NSURL *url = [NSURL URLWithString:[mutableURLString copy]];
+    else
+    {
+        NSString *urlString = [[NSMutableString alloc] initWithString:kPTEBaseURLString];
+        url = [NSURL URLWithString:urlString];
+    }
     
     NSURLSessionDataTask *task = [session dataTaskWithURL:url
                                         completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
