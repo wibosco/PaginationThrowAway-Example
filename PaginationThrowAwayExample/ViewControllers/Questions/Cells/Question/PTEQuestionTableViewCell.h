@@ -10,6 +10,10 @@
 
 @interface PTEQuestionTableViewCell : UITableViewCell
 
+@property (nonatomic, strong, readonly) UILabel *questionLabel;
+
+@property (nonatomic, strong, readonly) UILabel *authorLabel;
+
 + (NSString *)reuseIdentifier;
 
 - (void)layoutByApplyingConstraints;

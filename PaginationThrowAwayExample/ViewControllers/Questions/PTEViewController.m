@@ -58,12 +58,24 @@
 {
     self.feed = nil;
     
-    [PTEQuestionsAPIManager ]
+    __weak typeof(self) weakSelf = self;
+    
+    [PTEQuestionsAPIManager retrievalQuestionsForFeed:self.feed
+                                           completion:^(BOOL successful)
+    {
+        [weakSelf.tableView reloadData];
+    }];
 }
 
 - (void)paginate
 {
+    __weak typeof(self) weakSelf = self;
     
+    [PTEQuestionsAPIManager retrievalQuestionsForFeed:self.feed
+                                           completion:^(BOOL successful)
+     {
+         [weakSelf.tableView reloadData];
+     }];
 }
 
 #pragma mark - Questions
@@ -106,10 +118,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    PTEQuestion *question = self.feed.orderedQuestions[indexPath.row];
+    
     PTEQuestionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PTEQuestionTableViewCell reuseIdentifier]
                                                                   forIndexPath:indexPath];
     
+    cell.questionLabel.text = question.title;
+    cell.authorLabel.text = question.author;
+    
+    /*-------------------*/
+    
     [cell layoutByApplyingConstraints];
+    
+    /*-------------------*/
     
     return cell;
 }
